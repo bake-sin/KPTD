@@ -59,6 +59,8 @@ Below is a minimal clean environment sufficient to run this repository.
 conda create -n kptd python=3.9 -y
 conda activate kptd
 
+---
+
 ## 2️⃣ Install PyTorch (choose CUDA version)
 
 Please follow the official PyTorch installation guide:
@@ -68,6 +70,7 @@ Example (CUDA 11.8):
 
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
+---
 
 ## 🧩 Core Dependencies
 
@@ -78,6 +81,8 @@ pip install transformers open-clip-torch
 pip install tqdm einops
 pip install medpy         # optional: HD95 / ASD metrics
 pip install torchio       # for I/O & preprocessing (TorchIO)
+
+---
 
 ## 🚀 Training
 
