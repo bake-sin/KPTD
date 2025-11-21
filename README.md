@@ -40,7 +40,7 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 ---
 
 
-## 🖥 Environment & Installation
+# 🖥 Environment & Installation
 
 Experiments were conducted with:
 
@@ -53,7 +53,7 @@ PyTorch 2.1+ / 2.2+ / 2.3+ (any recent 2.x version should work)
 Below is a minimal clean environment sufficient to run this repository.
 ---
 
-## 1️⃣ Create Environment
+# 1️⃣ Create Environment
 
 ```bash
 conda create -n kptd python=3.9 -y
@@ -61,7 +61,7 @@ conda activate kptd
 
 ---
 
-## 2️⃣ Install PyTorch (choose CUDA version)
+# 2️⃣ Install PyTorch (choose CUDA version)
 
 Please follow the official PyTorch installation guide:
 https://pytorch.org/get-started/locally/
@@ -72,7 +72,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 ---
 
-## 🧩 Core Dependencies
+# 🧩 Core Dependencies
 
 Install the core packages:
 
@@ -84,7 +84,7 @@ pip install torchio       # for I/O & preprocessing (TorchIO)
 
 ---
 
-## 🚀 Training
+# 🚀 Training
 
 python tus_main.py \
     --train-root ./data/train \
@@ -96,7 +96,9 @@ python tus_main.py \
     --use-text True \
     --text-path ./data/train/text.xlsx
 
-## 🧪 Testing & Inference
+---
+
+# 🧪 Testing & Inference
 python tus_model_test.py \
     --test-root ./data/test \
     --model-path ./checkpoints/best_model.pth \
