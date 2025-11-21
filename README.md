@@ -16,22 +16,17 @@ KPTD presents a **text-guided, semi-supervised, disentangled and trustworthy** s
 
 ---
 
-# 📌 **Highlights**
+# 📌 Highlights
 
-### 🔺 Knowledge-Prompted Adaptation & Localization (KPAL)  
-Uses domain knowledge + CLIP text encoder to guide feature localization.
-
-### 🔺 Foreground–Background Disentangled Learning (FBDL)  
-Separates anatomical structures from noise & background.
-
-### 🔺 Foreground–Background Trustworthy Fusion (FBTF)  
-Uses uncertainty-aware fusion to improve segmentation reliability.
+### 🔺 Knowledge-Prompted Adaptation & Localization (KPAL)
+### 🔺 Foreground–Background Disentangled Learning (FBDL)
+### 🔺 Foreground–Background Trustworthy Fusion (FBTF)
 
 These modules jointly achieve **high-quality segmentation with very few labeled images**.
 
 ---
 
-# 📚 **Table of Contents**
+# 📚 Table of Contents
 - [Repository Structure](#-repository-structure)
 - [Environment & Installation](#-environment--installation)
 - [Core Dependencies](#-core-dependencies)
@@ -45,15 +40,17 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 ---
 
 # 📂 Repository Structure
+
+```txt
 KPTD/
-│── tus_main.py # Main script (training / validation / testing)
-│── tus_model.py # KPTD network (KPAL, FBDL, FBTF modules)
-│── tus_model_test.py # Inference pipeline
-│── hparam_tus.py # Hyper-parameters & paths
-│── simple_tokenizer.py # Lightweight tokenizer for CLIP text prompts
-│── clip-vit-base-patch32/ # CLIP image encoder weights
-│── clip_text_weight/ # CLIP text encoder weights
-│── bpe_simple_vocab_16e6.txt.gz # BPE vocabulary
+│── tus_main.py              # Main script (training / validation / testing)
+│── tus_model.py             # KPTD network (KPAL, FBDL, FBTF modules)
+│── tus_model_test.py        # Inference pipeline
+│── hparam_tus.py            # Hyper-parameters & paths
+│── simple_tokenizer.py      # Lightweight tokenizer for CLIP text prompts
+│── clip-vit-base-patch32/   # CLIP image encoder weights
+│── clip_text_weight/        # CLIP text encoder weights
+│── bpe_simple_vocab_16e6.txt.gz   # BPE vocabulary
 │── README.md
 
 
