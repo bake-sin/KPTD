@@ -61,17 +61,19 @@ conda activate kptd
 
 # Example (CUDA 11.8):
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+---
 
 
 ### 🧩 Core Dependencies
 
-Install the core packages:
-
+```bash
 pip install numpy pandas pillow opencv-python SimpleITK scikit-image nibabel
 pip install transformers open-clip-torch
 pip install tqdm einops
 pip install medpy         # optional: HD95 / ASD metrics
 pip install torchio       # for I/O & preprocessing (TorchIO)
+
+
 
 ---
 
