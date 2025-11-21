@@ -1,4 +1,4 @@
-KPTD: Knowledge-Prompted Trustworthy Disentangled Learning for Thyroid Ultrasound Segmentation with Limited Annotations
+**KPTD: Knowledge-Prompted Trustworthy Disentangled Learning for Thyroid Ultrasound Segmentation with Limited Annotations
 
 This repository provides the official implementation of the paper:
 
@@ -167,3 +167,91 @@ Dice
 Intersection-over-Union (IoU)
 
 Average Surface Distance (ASD)
+**
+
+KPTD/
+│── tus_main.py # Main script for training / validation / testing
+│── tus_model.py # KPTD network (encoder, KPAL, FBDL, FBTF)
+│── tus_model_test.py # Inference pipeline
+│── hparam_tus.py # Hyper-parameters & path configuration
+│── simple_tokenizer.py # Lightweight tokenizer for CLIP text prompts
+│── clip-vit-base-patch32/ # CLIP image encoder weights
+│── clip_text_weight/ # CLIP text encoder weights
+│── bpe_simple_vocab_16e6.txt.gz # BPE vocabulary
+│── README.md
+
+
+---
+
+# 🖥 Installation & Environment
+
+Experiments were originally conducted in a **Python 3.9** environment with CUDA-enabled PyTorch.
+
+To reproduce our results:
+
+```bash
+conda create -n kptd python=3.9 -y
+conda activate kptd
+
+
+🔧 Install PyTorch (choose CUDA version based on your system)
+
+Please follow the official install instruction:
+
+👉 https://download.pytorch.org/whl/cu118
+
+Example (CUDA 11.8):
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+📦 Core Dependencies
+
+KPTD relies on the following major libraries:
+numpy
+pandas
+opencv-python
+pillow
+SimpleITK
+scikit-image
+einops
+tqdm
+transformers
+open-clip-torch
+medpy          # optional (HD95, ASD evaluation)
+nibabel        # optional for medical IO
+
+Install them via:
+pip install -r requirements.txt
+
+📁 Dataset Structure
+
+You must organize your dataset as follows:
+data/
+│── train/
+│     ├── images/         # *.png / *.jpg ultrasound images
+│     ├── masks/          # binary segmentation masks (labeled samples only)
+│     ├── text.xlsx       # optional text metadata for prompts
+│
+│── val/
+│     ├── images/
+│     ├── masks/
+│
+│── test/
+      ├── images/
+      ├── masks/
+Each sample corresponds to one image and optional text:
+
+source → ultrasound image
+
+label → segmentation mask (only for labeled subset)
+
+text → several attribute phrases (used to construct CLIP text prompts)
+
+🧪 Semi-Supervised Setting
+
+KPTD uses a labeled + unlabeled training split:
+
+Argument	Meaning
+--num-labeled	number of labeled training samples
+--total-samples	labeled + unlabeled samples
+--labeled-batch-size	labeled samples per batch
+--val-start-epoch	start validation from epoch X
