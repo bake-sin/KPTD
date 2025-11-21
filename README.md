@@ -34,8 +34,7 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 - [Semi-Supervised Configuration](#-semi-supervised-configuration)
 - [Training](#-training)
 - [Testing & Inference](#-testing--inference)
-- [Citation](#-citation)
-- [Contact](#-contact)
+
 
 ---
 
@@ -57,7 +56,7 @@ Below is a minimal clean environment sufficient to run this repository.
 
 ```bash
 conda create -n kptd python=3.9 -y
-conda activate kptd
+conda activate kptd ```
 
 ---
 
