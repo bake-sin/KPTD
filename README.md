@@ -40,19 +40,7 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 ---
 
 
-📂 Repository Structure
-KPTD/
-├── tus_main.py              # Main script (training / validation / testing)
-├── tus_model.py             # KPTD network (KPAL, FBDL, FBTF modules)
-├── tus_model_test.py        # Inference / evaluation pipeline
-├── hparam_tus.py            # Hyper-parameters & path configuration
-├── simple_tokenizer.py      # Lightweight tokenizer for CLIP text prompts
-├── clip-vit-base-patch32/   # CLIP image encoder weights (ViT-B/32)
-├── clip_text_weight/        # CLIP text encoder weights
-├── bpe_simple_vocab_16e6.txt.gz   # BPE vocabulary for CLIP text encoder
-└── README.md
-
-🖥 Environment & Installation
+## 🖥 Environment & Installation
 
 Experiments were conducted with:
 
@@ -71,8 +59,39 @@ Below is a minimal clean environment sufficient to run this repository.
 conda create -n kptd python=3.9 -y
 conda activate kptd
 
+## 2️⃣ Install PyTorch (choose CUDA version)
 
-🧪 Testing & Inference
+Please follow the official PyTorch installation guide:
+https://pytorch.org/get-started/locally/
+
+Example (CUDA 11.8):
+
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+
+## 🧩 Core Dependencies
+
+Install the core packages:
+
+pip install numpy pandas pillow opencv-python SimpleITK scikit-image nibabel
+pip install transformers open-clip-torch
+pip install tqdm einops
+pip install medpy         # optional: HD95 / ASD metrics
+pip install torchio       # for I/O & preprocessing (TorchIO)
+
+## 🚀 Training
+
+python tus_main.py \
+    --train-root ./data/train \
+    --val-root ./data/val \
+    --num-labeled 200 \
+    --total-samples 1200 \
+    --labeled-batch-size 2 \
+    --epochs 200 \
+    --use-text True \
+    --text-path ./data/train/text.xlsx
+
+## 🧪 Testing & Inference
 python tus_model_test.py \
     --test-root ./data/test \
     --model-path ./checkpoints/best_model.pth \
