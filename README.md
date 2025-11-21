@@ -40,32 +40,29 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 ---
 
 
-```markdown
-# 📂 Repository Structure
-
-```txt
+📂 Repository Structure
 KPTD/
-│── tus_main.py              # Main script (training / validation / testing)
-│── tus_model.py             # KPTD network (KPAL, FBDL, FBTF modules)
-│── tus_model_test.py        # Inference pipeline
-│── hparam_tus.py            # Hyper-parameters & paths
-│── simple_tokenizer.py      # Lightweight tokenizer for CLIP text prompts
-│── clip-vit-base-patch32/   # CLIP image encoder weights
-│── clip_text_weight/        # CLIP text encoder weights
-│── bpe_simple_vocab_16e6.txt.gz   # BPE vocabulary
-│── README.md
+├── tus_main.py              # Main script (training / validation / testing)
+├── tus_model.py             # KPTD network (KPAL, FBDL, FBTF modules)
+├── tus_model_test.py        # Inference / evaluation pipeline
+├── hparam_tus.py            # Hyper-parameters & path configuration
+├── simple_tokenizer.py      # Lightweight tokenizer for CLIP text prompts
+├── clip-vit-base-patch32/   # CLIP image encoder weights (ViT-B/32)
+├── clip_text_weight/        # CLIP text encoder weights
+├── bpe_simple_vocab_16e6.txt.gz   # BPE vocabulary for CLIP text encoder
+└── README.md
 
----
-# 🖥 Environment & Installation
+🖥 Environment & Installation
 
-Experiments were performed on:
+Experiments were conducted with:
 
-- **Python 3.9**
-- **CUDA 11.3 / 11.8**
-- **PyTorch 2.1+ / 2.2+ / 2.3+ (all compatible)**  
+Python 3.9
 
-We provide a minimal environment below that fully covers the KPTD pipeline.
+CUDA 11.3 / 11.8
 
+PyTorch 2.1+ / 2.2+ / 2.3+ (any recent 2.x version should work)
+
+Below is a minimal clean environment sufficient to run this repository.
 ---
 
 ## 1️⃣ Create Environment
