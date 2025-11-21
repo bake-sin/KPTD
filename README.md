@@ -54,7 +54,6 @@ KPTD/
 │── README.md
 
 
----
 
 # 🖥 Environment & Installation
 
