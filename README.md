@@ -39,11 +39,6 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 
 ---
 
----
-
-
-
-请把你的 Repository Structure 替换成下面这一份（完全不会出错）：
 
 ```markdown
 # 📂 Repository Structure
@@ -60,6 +55,7 @@ KPTD/
 │── bpe_simple_vocab_16e6.txt.gz   # BPE vocabulary
 │── README.md
 
+---
 # 🖥 Environment & Installation
 
 Experiments were performed on:
