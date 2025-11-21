@@ -54,7 +54,6 @@ KPTD/
 │── README.md
 
 
-
 # 🖥 Environment & Installation
 
 Experiments were performed on:
@@ -73,57 +72,6 @@ We provide a minimal environment below that fully covers the KPTD pipeline.
 conda create -n kptd python=3.9 -y
 conda activate kptd
 
-2️⃣ Install PyTorch (choose your CUDA version)
-
-👉 https://download.pytorch.org/whl/cu118
-
-Example (CUDA 11.8): pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-
-🧩 Core Dependencies
-
-These are the essential packages (cleaned from your full environment):
-pip install numpy pandas pillow opencv-python SimpleITK scikit-image nibabel
-pip install transformers open-clip-torch
-pip install tqdm einops
-pip install medpy    # optional: HD95 / ASD metrics
-Your full Anaconda environment contains many other unrelated packages—
-this list is the minimal clean version for using KPTD.
-
-📁 Dataset Structure
-
-Organize your data as:
-data/
-│── train/
-│     ├── images/   # *.png / *.jpg
-│     ├── masks/    # segmentation masks (only the labeled subset)
-│     ├── text.xlsx # optional text for knowledge prompts
-│
-│── val/
-│     ├── images/
-│     ├── masks/
-│
-│── test/
-      ├── images/
-      ├── masks/
-
-🔆 Semi-Supervised Configuration
-
-KPTD supports flexible labeled/unlabeled splits:
-
-Argument	Meaning
---num-labeled	number of labeled samples
---total-samples	total training samples
---labeled-batch-size	number of labeled samples per batch
---val-start-epoch	start validation from epoch X
-
-🚀 Training
-python tus_main.py \
-    --train-root ./data/train \
-    --val-root ./data/val \
-    --num-labeled  \
-    --total-samples  \
-    --labeled-batch-size  \
-    --epochs 
 
 🧪 Testing & Inference
 python tus_model_test.py \
