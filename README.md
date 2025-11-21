@@ -52,24 +52,24 @@ PyTorch 2.1+ / 2.2+ / 2.3+ (any recent 2.x version should work)
 Below is a minimal clean environment sufficient to run this repository.
 ---
 
+# ------------------------------------------------------------
 # 1️⃣ Create Environment
+# ------------------------------------------------------------
 
-```bash
 conda create -n kptd python=3.9 -y
-conda activate kptd ```
+conda activate kptd
 
----
 
+# ------------------------------------------------------------
 # 2️⃣ Install PyTorch (choose CUDA version)
+# ------------------------------------------------------------
 
-Please follow the official PyTorch installation guide:
-https://pytorch.org/get-started/locally/
+# Please follow the official PyTorch installation guide:
+# https://pytorch.org/get-started/locally/
 
-Example (CUDA 11.8):
-
+# Example (CUDA 11.8):
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
----
 
 # 🧩 Core Dependencies
 
