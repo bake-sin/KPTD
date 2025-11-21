@@ -67,13 +67,17 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
  ## 🧩 Core Dependencies
 Bashpip install numpy pandas pillow opencv-python SimpleITK scikit-image nibabel
+```bash
 pip install transformers open-clip-torch
 pip install tqdm einops
 pip install medpy # optional: HD95 / ASD metrics
 pip install torchio # for I/O & preprocessing (TorchIO)
+```
+---
 
-🚀 Training
-Bashpython tus_main.py \
+ ## 🚀 Training
+ ```bash
+python tus_main.py \
     --train-root ./data/train \
     --val-root ./data/val \
     --num-labeled 200 \
@@ -82,9 +86,14 @@ Bashpython tus_main.py \
     --epochs 200 \
     --use-text True \
     --text-path ./data/train/text.xlsx
+```
+---
 
-🧪 Testing & Inference
-Bashpython tus_model_test.py \
+ ## 🧪 Testing & Inference
+  ```bash
+python tus_model_test.py \
     --test-root ./data/test \
     --model-path ./checkpoints/best_model.pth \
     --save-mask True
+```
+---
