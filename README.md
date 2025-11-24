@@ -31,9 +31,7 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 - [Environment & Installation](#-environment--installation)
 - [Core Dependencies](#-core-dependencies)
 - [Dataset Structure](#-dataset-structure)
-- [Semi-Supervised Configuration](#-semi-supervised-configuration)
 - [Training](#-training)
-- [Testing & Inference](#-testing--inference)
 
 
 ---
@@ -59,7 +57,7 @@ Below is a minimal clean environment sufficient to run this repository.
 conda create -n kptd python=3.9 -y
 conda activate kptd
 
-# Example (CUDA 11.8):
+# (CUDA 11.8):
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 ---
@@ -89,11 +87,6 @@ python tus_main.py \
 ```
 ---
 
- ## 🧪 Testing & Inference
-  ```bash
-python tus_model_test.py \
-    --test-root ./data/test \
-    --model-path ./checkpoints/best_model.pth \
-    --save-mask True
+
 ```
 ---
