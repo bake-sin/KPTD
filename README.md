@@ -27,10 +27,8 @@ These modules jointly achieve **high-quality segmentation with very few labeled 
 ---
 
 # 📚 Table of Contents
-- [Repository Structure](#-repository-structure)
 - [Environment & Installation](#-environment--installation)
 - [Core Dependencies](#-core-dependencies)
-- [Dataset Structure](#-dataset-structure)
 - [Training](#-training)
 
 
